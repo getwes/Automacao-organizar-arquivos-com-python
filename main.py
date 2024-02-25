@@ -13,3 +13,6 @@ locais = {
     "pdfs": [".pdf"],
     "csv": [".csv"]
 }
+
+for arquivo in lista_arquivos:
+    nome, extensao = os.path.splitext(f"{caminho}/{arquivo}")
