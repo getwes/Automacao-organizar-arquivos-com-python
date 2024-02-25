@@ -15,4 +15,10 @@ locais = {
 }
 
 for arquivo in lista_arquivos:
+    # 01. arquivo.pdf
     nome, extensao = os.path.splitext(f"{caminho}/{arquivo}")
+    for pasta in locais:
+        if extensao in locais[pasta]:
+            if not os.path.exists(f"{caminho}/{pasta}"):
+                os.makedirs(f"{caminho}/{pasta}")
+            os.rename(f"{caminho}/{arquivo}", f"{caminho}/{pasta}/{arquivo}")
